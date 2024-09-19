@@ -1,0 +1,37 @@
+<style>
+    h2
+    {
+        width: 400px;
+        background-color: aqua;
+        animation-name: text;
+        animation-duration: 3s;
+    }
+    #f1
+    {
+        animation-fill-mode: backwards;
+    }
+    #f2
+    {
+        animation-fill-mode: forwards;
+    }
+    #f3
+    {
+        animation-fill-mode: both;
+    }
+    @keyframes text
+    {
+        from 
+        {
+            margin-left: 0%;
+            background-color: aqua;
+        }
+        to
+        {
+            margin-left: 60%;
+            background-color: orange;
+        }
+    }
+</style>
+<h2 id="f1">Welcome</h2>
+<h2 id="f2">Welcome</h2>
+<h2 id="f3">Welcome</h2>

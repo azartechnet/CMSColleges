@@ -1,0 +1,39 @@
+<style>
+    h2
+    {
+        width: 350px;
+        animation-name: example;
+        animation-duration: 4s;
+        animation-iteration-count: infinite;
+        background-color: aqua;
+    }
+
+    #one
+    {
+        animation-timing-function: ease;
+    }
+    #two
+    {
+        animation-timing-function: ease-out;
+    }
+    #three
+    {
+        animation-timing-function: linear;
+    }
+    @keyframes example
+    {
+        from
+        {
+            margin-left: 60%;
+        }
+        to
+        {
+            margin-left: 0%;
+        }
+    }
+</style>
+<body>
+    <h2 id="one">Welcome</h2>
+    <h2 id="two">Welcome</h2>
+    <h2 id="three">welcome</h2>
+</body>
