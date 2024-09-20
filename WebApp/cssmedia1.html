@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <title></title>
+        <style>
+            body
+            {
+                background-color: aqua;
+            }
+            .flex-container
+            {
+                display: flex;
+                background-color:brown;
+            }
+            .flex-container>div
+            {
+                background-color: blue;
+                margin: 10px;
+                padding: 20px;
+                font-size: 30px;
+            }
+            @media only screen and (max-width:600px)
+            {
+                body
+                {
+                    background-color: aquamarine;
+                    border-style: dotted;
+                }
+                .flex-container
+                {
+                    flex-direction: row-reverse;
+                }
+           
+            }
+        </style>
+    </head>
+    <body>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat omnis assumenda nisi quam, eligendi error repellendus velit itaque, adipisci iure voluptatem atque minus voluptas architecto, laboriosam officia ab harum! Impedit?
+       
+    </body>
+    <div class="flex-container">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+     </div>
+</html>
