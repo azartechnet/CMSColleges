@@ -1,0 +1,21 @@
+<script>
+    function Sample1()
+    {
+        document.getElementById("d1").innerHTML="This is Sample1";
+    }
+    function Sample2()
+    {
+         document.getElementById("d1").innerHTML="This is Sample2";
+    }
+
+    function Sample3(a,b)//argument passing
+    {
+        document.write("Your value is::"+a+""+b);
+    }
+</script>
+<body>
+    <p id="d1"></p>
+    <button type="button" onclick="Sample1()">Sample1</button>
+    <button type="button" onclick="Sample2()">Sample2</button>
+    <button type="button" onclick="Sample3(10,20)">Sample3</button>
+</body>

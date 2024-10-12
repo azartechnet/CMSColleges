@@ -1,0 +1,21 @@
+<body>
+    <button onclick="demo()">ClickHere</button>
+    <p id="d1"></p>
+    <script>
+
+        function demo()
+        {
+            var t1;
+            if(confirm("Press a button!"))
+            {
+                t1="welcome press ok button";
+            }
+            else
+            {
+                t1="Welcome press cancel button";
+            }
+            document.getElementById("d1").innerHTML=t1;
+        }
+
+    </script>
+</body>
