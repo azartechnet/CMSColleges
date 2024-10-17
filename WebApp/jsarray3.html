@@ -1,0 +1,23 @@
+<script>
+    const f1=["a1","a2","a3","a4","a3","a5"]
+
+    //find
+
+     //var f2=f1.find(myfun);
+     //var f2=f1.findIndex(myfun);
+     //var f2=f1.findLast(myfun);
+     var f2=f1.findLastIndex(myfun);
+     function myfun(x) {
+  
+        //return x;
+        return x=="a3"
+     }
+    
+    
+    // Check if element is found
+    if (f2) {
+        console.log("Element found:", f2);
+    } else {
+        console.log("Element not found");
+    }
+</script>
