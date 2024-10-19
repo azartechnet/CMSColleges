@@ -1,0 +1,27 @@
+<style>
+    .example
+    {
+        color:blue;
+    }
+    #unique
+    {
+        font-weight: bold;
+    }
+</style>
+<body>
+    <div class="example">First div element</div>
+    <div id="unique">Seconddivelement</div>
+    <script>
+        var firstElement=document.querySelector(".example");
+        firstElement.style.color="red";
+        console.log("First Element::",firstElement.textContent)
+    </script>
+     <script>
+        var secondElement=document.querySelectorAll("#unique");
+        if(secondElement)
+     {
+        secondElement[0].style.color="green";
+        console.log("Second Element::",secondElement[0].textContent)
+     }
+    </script>
+</body>
