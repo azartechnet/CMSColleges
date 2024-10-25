@@ -1,0 +1,21 @@
+<body>
+    <input type="number"  id="numb">
+    <button type="button" onclick="myfun()" id="btn">Click me</button>
+    <p id="demo"></p>
+    <script>
+        function myfun() {
+            let x=document.getElementById("numb");
+            let text;
+            if(x.value>0){
+                text="You entered a positive number";
+                }
+                else if(x.value<0){
+                    text="You entered a negative number";
+                    }
+                    else{
+                        text="You entered zero";
+                        }
+                        document.getElementById("demo").innerHTML=text;
+                    }
+    </script>
+</body>
