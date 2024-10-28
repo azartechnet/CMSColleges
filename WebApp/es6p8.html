@@ -1,0 +1,16 @@
+<p id="d1"></p>
+<p id="d2"></p>
+<script>
+    class Employee
+    {
+        constructor(empid,empname)
+        {
+            this.empid=empid;
+            this.empname=empname;
+        }
+    }
+    const my1=new Employee(1001,"azar")//Object Creating
+    const my2=new Employee(1002,"mohamed")
+    document.getElementById("d1").innerHTML=my1.empid+""+my1.empname;
+    document.getElementById("d2").innerHTML=my2.empid+""+my2.empname;
+</script>
