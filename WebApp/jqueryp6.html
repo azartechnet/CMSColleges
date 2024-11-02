@@ -1,0 +1,15 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    i=0;
+    $(document).ready(function(){
+        $("input").keypress(function(){
+            $("span").text(i+=1)
+        })
+    })
+
+</script>
+<body>
+    Enter the your Nameis::
+    <input type="text">
+    <p>KeyPress<span>0</span></p>
+</body>
