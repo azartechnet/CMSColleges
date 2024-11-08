@@ -1,0 +1,14 @@
+<p id="demo"></p>
+<script>
+    const text='{"name":"azar","birth":"2014-11-08","city":"karur"}'
+    const obj = JSON.parse(text,function(key,value){
+        if(key=='birth'){
+            return new Date(value);
+        }
+        else
+        {
+              return value;
+        }
+    });
+    document.getElementById("demo").innerHTML=obj.name+","+obj.birth;
+</script>
