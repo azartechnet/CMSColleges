@@ -119,7 +119,7 @@ r1.render(<Sample/>)*/
 
 //Class Components
 
-class Sample extends React.Component
+/*class Sample extends React.Component
 {
   render()
   {
@@ -129,6 +129,67 @@ class Sample extends React.Component
       </>
     )
     }
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Sample/>)*/
+
+
+//props using function to passing arguments
+
+/*function Sample(props)
+{
+  return(
+    <>
+        <h1>Hello{props.name}</h1>
+        <h2>{props.age}</h2>
+    </>
+  )
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Sample name="Rahul" age="20"/>)*/
+
+//React Component in Component
+
+/*function Component1()
+{
+  return(
+    <>
+      <h1>Hello</h1>
+    </>
+  )
+}
+function Component2()
+{
+  return(
+    <>
+      <h1>Component2</h1>
+      <Component1/>
+    </>
+  )
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Component2/>)*/
+
+//Constructor using super
+
+class Sample extends React.Component
+{
+  constructor(props)
+  { 
+     super()
+
+     this.state={name:"Rahul",age:20}
+  }
+
+  render()
+  {
+     return(
+      <>
+       <h1>Hello{this.state.name}</h1>
+       <h2>{this.state.age}</h2>
+      </>
+     )
+  }
 }
 const r1=ReactDOM.createRoot(document.getElementById('root'))
 r1.render(<Sample/>)
