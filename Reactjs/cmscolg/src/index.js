@@ -172,7 +172,7 @@ r1.render(<Component2/>)*/
 
 //Constructor using super
 
-class Sample extends React.Component
+/*class Sample extends React.Component
 {
   constructor(props)
   { 
@@ -192,4 +192,131 @@ class Sample extends React.Component
   }
 }
 const r1=ReactDOM.createRoot(document.getElementById('root'))
-r1.render(<Sample/>)
+r1.render(<Sample/>)*/
+
+//React State
+
+/*class Sample extends React.Component
+{
+  constructor(props)
+  {
+    super(props);
+    this.state={
+      name:"Rahul",
+      age:20
+    }
+  }
+  render()
+  {
+    return(
+      <>
+         <h1>Hello {this.state.name}</h1>
+         <h2>{this.state.age}</h2>
+      </>
+    )
+  }
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Sample/>)*/
+
+//Changing the state object
+
+/*class Sample extends React.Component
+{
+  constructor(props)
+  {
+    super(props);
+    this.state={
+      name:"Rahul",
+      age:20
+
+  }
+  this.changeName=this.changeName.bind(this);
+  this.changeAge=this.changeAge.bind(this);
+
+}
+ changeName()
+ {
+  this.setState({
+    name:"Rahul Kumar"
+    })
+    }
+    changeAge()
+    {
+      this.setState({
+        age:21
+        })
+        }
+        render()
+        {
+          return(
+            <>
+             <h1>Hello {this.state.name}</h1>
+             <h2>{this.state.age}</h2>
+             <button onClick={this.changeName}>Change Name</button>
+             <button onClick={this.changeAge}>Change Age</button>
+            </>
+          )
+        }
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Sample/>)*/
+
+//React Event
+
+/*function Football()
+{
+  const shoot=()=>{
+     alert("Goal Scored")
+  }
+  return(
+    <>
+      <h1>Football</h1>
+      <button onClick={shoot}>Shoot</button>
+    </>
+  )
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Football/>)*/
+
+//React event argument passing
+
+/*function Football()
+{
+   const shoot=(e)=>{
+    alert("Goal Scored"+e)
+   }
+   return(
+    <>
+      <h1>Football</h1>
+      <button onClick={(e)=>shoot("100")}>Shoot</button>
+    </>
+    )
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Football/>)*/
+
+//Conditional Rendering
+
+function MissedGoal()
+{
+   return<h1>Missed</h1>
+}
+function MadeGoal()
+{
+  return<h1>Goal Made</h1>
+}
+function Football(props)
+{
+    const isGoal=props.isGoal;
+    if(isGoal)
+    {
+      return<MadeGoal/>
+    }
+    else
+    {
+      return<MissedGoal/>
+    }
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Football isGoal={Math.random()>0.5}/>)
