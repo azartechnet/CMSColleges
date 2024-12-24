@@ -298,7 +298,7 @@ r1.render(<Football/>)*/
 
 //Conditional Rendering
 
-function MissedGoal()
+/*function MissedGoal()
 {
    return<h1>Missed</h1>
 }
@@ -319,4 +319,134 @@ function Football(props)
     }
 }
 const r1=ReactDOM.createRoot(document.getElementById('root'))
-r1.render(<Football isGoal={Math.random()>0.5}/>)
+r1.render(<Football isGoal={Math.random()>0.5}/>)*/
+
+//React List using Map
+
+/*function Car(props)
+{
+  return<li>I am {props.b1}</li>
+}
+function Garage()
+{
+  const cars=["BMW","Audi","Toyota"];
+  return(
+    <>
+     <h1>Garage</h1>
+     <ul>
+      {cars.map((car)=><Car b1={car}/>)}
+     </ul>
+    </>
+  )
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Garage/>)*/
+//React Keys
+/*function Car(props)
+{
+  return<li>{props.id}{props.b1}</li>
+}
+function Garage()
+{
+   const cars=[
+    {id:1,b1:"BMW"},
+    {id:2,b1:"Audi"},
+    {id:3,b1:"Toyota"}
+    ];
+    return(
+      <>
+       <h1>Garage</h1>
+       <ul>
+        {cars.map((car)=><Car id={car.id} b1={car.b1}/>)}
+       </ul>
+      </>
+    )
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Garage/>)*/
+
+//React getDerviedStateFromProps
+
+/*class Header extends React.Component
+{
+  constructor(props)
+  {
+    super(props)
+    this.state={count:0}
+  }
+  static getDerivedStateFromProps(props,state)
+  {
+    console.log("getDerivedStateFromProps")
+    return{count:props.c1}
+  }
+  render()
+  {
+     return(
+      <>
+       <h1>Header</h1>
+       <p>Count:{this.state.count}</p>
+      </>
+     )
+  }
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Header c1={10}/>)*/
+
+//ComponentDidMount
+
+/*class Header extends React.Component
+{
+  constructor(props)
+  {
+    super(props)
+    this.state={favcolor:"red"}
+  }
+  componentDidMount()
+  {
+     console.log("componentDidMount")
+     setTimeout(()=>{
+      this.setState({favcolor:"blue"})
+     },3000)
+  }
+  render()
+  {
+    return(
+      <>
+      <h1>Header</h1>
+      <p>My fav color is {this.state.favcolor}</p>
+
+      </>
+    )
+  }
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Header/>)*/
+
+//shouldComponentUpdate
+
+class Header extends React.Component
+{
+  constructor(props)
+  {
+    super(props)
+    this.state={favcolor:"red"}
+  }
+  shouldComponentUpdate(nextProps,nextState)
+  {
+    console.log("shouldComponentUpdate")
+  }
+  changeColor=()=>{
+    this.setState({favcolor:"blue"})
+  }
+  render()
+  {
+    return(
+      <>
+           <h1>Header</h1>
+           <p>My fav color is {this.state.favcolor}</p>
+      </>
+    )
+  }
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Header/>)
