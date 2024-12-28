@@ -515,7 +515,7 @@ r1.render(<Counter/>)*/
 
   //React using useContext
 
-  import { useContext,createContext } from 'react';
+  /*import { useContext,createContext } from 'react';
 
   const UserContext=createContext();
 
@@ -541,4 +541,22 @@ r1.render(<Counter/>)*/
     )
   }
   const r1=ReactDOM.createRoot(document.getElementById('root'))
-  r1.render(<Component1/>)
+  r1.render(<Component1/>)*/
+
+  //React useRef
+  
+  function FocusInput()
+  {
+    const inputRef=useRef(null);
+    const handleClick=()=>{
+      inputRef.current.focus();
+      }
+      return(
+        <>
+            <input type="text" ref={inputRef}/>
+            <button onClick={handleClick}>Focus</button>
+        </>
+      )
+  }
+  const r1=ReactDOM.createRoot(document.getElementById('root'))
+  r1.render(<FocusInput/>)
