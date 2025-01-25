@@ -1,5 +1,5 @@
 const {MongoClient}=require('mongodb')
-var url="mon in:admin@cluster0.j8tqf.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+var url="mongodb+srv://admin:admin@cluster0.j8tqf.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
 const client=new MongoClient(url);
 
 async function run()
@@ -8,8 +8,8 @@ async function run()
     {
         const db=client.db('cmsdb')
         const collection=db.collection('mycol')
-        var obj={name:"azar",age:33,email:"azar@gmail.com"}
-        await collection.insertOne(obj);
+        var obj=[{name:"mohamed",age:36,email:"mohamed@gmail.com"},{name:"raja",age:33,email:"raja@gmail.com"}]
+        await collection.insertMany(obj);
         console.log("DataInserted..")
     }
     finally
