@@ -1,10 +1,32 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Axios from 'axios';
 
 function CrudPage() {
     const [foodName, setFoodName] = useState("");
     const [description, setDescription] = useState("");
 
+    const [foodList,setFoodList]=useState([]);
+    const [newFoodName,setNewFoodName]=useState("")
+
+
+
+    useEffect(()=>{
+        fetchData();
+    },[])
+
+    //get the data
+    const fetchData=()=>{
+        Axios.get('http://localhost:3001/read').then((response)=>{
+            setFoodList(response.data);
+        })
+    }
+//updated
+const updateFood = (id) => {
+    Axios.put('http://localhost:3001/update', {id,newFoodName})
+            .then(() => fetchData());
+            }
+        
+    //insert
     const addFoodData = () => {
         Axios.post("http://localhost:3001/insert", { foodName, description })
             .then((response) => {
@@ -47,17 +69,16 @@ function CrudPage() {
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>Apple</td>
-                        <td>Good</td>
-                        <td>
-                            <input type="text" className="form-control" placeholder="Update" />
-                            <button className="btn btn-primary">Update</button>
-                        </td>
-                        <td>
-                            <button className="btn btn-danger">Delete</button>
-                        </td>
-                    </tr>
+                {foodList.map((val,key)=>(
+                 <tr key={key}>
+                    <td>{val.foodName}</td>
+                    <td>{val.description}</td>
+                    <td>
+                        <input type="text" placeholder='UpdateFoodName' onChange={(e)=>setNewFoodName(e.target.value)}/>
+                        <button onClick={()=>updateFood(val._id)}>Edit</button></td>
+                    <td><button>Delete</button></td>
+                 </tr>
+                ))}
                 </tbody>
             </table>
         </div>
