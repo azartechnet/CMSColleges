@@ -68,6 +68,23 @@ app.put("/update",async(req,res)=>{
     }
 })
 
+//Deleting the data
+
+app.delete("/delete/:id",async(req,res)=>{
+  const id = req.params.id; 
+  try{
+    const result=await FoodModel.findByIdAndRemove(id);
+    if(!result)
+    {
+       return res.status(404).send("Food items not found")
+    }
+    res.send("Food item deleted successfully")
+  }catch(err){
+        console.error(err);
+        res.status(500).send("Error deleting food item")
+    }
+  });
+
 app.listen(3001,()=>{
     console.log("Server is running on port 3001")
 })

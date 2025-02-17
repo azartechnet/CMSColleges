@@ -37,6 +37,11 @@ const updateFood = (id) => {
             });
     };
 
+    //delete
+    const deleteData=(id)=>{
+        Axios.delete(`http://localhost:3001/delete/${id}`).then(()=>fetchData());
+    }
+
     return (
         <div className="container">
             <h1>CRUD Page</h1>
@@ -76,7 +81,7 @@ const updateFood = (id) => {
                     <td>
                         <input type="text" placeholder='UpdateFoodName' onChange={(e)=>setNewFoodName(e.target.value)}/>
                         <button onClick={()=>updateFood(val._id)}>Edit</button></td>
-                    <td><button>Delete</button></td>
+                    <td><button onClick={()=>deleteData(val._id)}>Delete</button></td>
                  </tr>
                 ))}
                 </tbody>
