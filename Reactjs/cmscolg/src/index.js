@@ -545,7 +545,7 @@ r1.render(<Counter/>)*/
 
   //React useRef
   
-  function FocusInput()
+  /*function FocusInput()
   {
     const inputRef=useRef(null);
     const handleClick=()=>{
@@ -559,4 +559,111 @@ r1.render(<Counter/>)*/
       )
   }
   const r1=ReactDOM.createRoot(document.getElementById('root'))
-  r1.render(<FocusInput/>)
+  r1.render(<FocusInput/>)*/
+
+  //Another Example of useState
+
+  /*function UserProfile()
+  {
+    const [user,setUser]=useState({name:"mohamed",age:20,email:"mohamed@gmail.com"})
+    const updateEmail=()=>{
+      setUser({...user,email:"mohamed123@gmail.com"})
+    }
+    return(
+      <>
+          <h1>name:{user.name}</h1>
+          <h1>age:{user.age}</h1>
+          <h1>email:{user.email}</h1>
+          <button onClick={updateEmail}>update email</button>
+      </>
+    )
+  }
+  const r1=ReactDOM.createRoot(document.getElementById('root')) 
+  r1.render(<UserProfile/>)*/
+
+  //useState with Array
+
+  /*function TodoList()
+  {
+     const [todos,setTodos]=useState(["BuyMilk","BuyEggs","BuyBread"])
+     const addTodo=()=>{
+      setTodos([...todos,"BuyButter"])
+     }
+     return(
+      <>
+          <h1>Todo List</h1>
+          <ul>
+            {todos.map((todo,index)=>
+            <li>{index}{todo}</li>
+            )}
+          </ul>
+          <button onClick={addTodo}>Add Todo</button>
+      </>
+     )
+  }
+  const r1=ReactDOM.createRoot(document.getElementById('root'))
+  r1.render(<TodoList/>)*/
+
+  //React REST API post using of useState and useEffects
+
+  /*function App()
+  {
+    const [user,setUser]=useState([]);
+
+    useEffect(()=>{
+      fetch('https://jsonplaceholder.typicode.com/users')
+      .then(response=>response.json())
+      .then(data=>setUser(data))
+    })
+    return(
+      <>
+      <h1>Users</h1>
+       <table>
+        <thead>
+          <th>Id</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>WebSite</th>
+          <th>Action</th>
+        </thead>
+        <tbody>
+          {user.map((user,index)=>
+          <tr key={index}>
+            <td>{user.id}</td>
+            <td>{user.name}</td>
+            <td>{user.email}</td>
+            <td>{user.website}</td>
+            <td><button>View</button></td>
+          </tr>
+          )}
+        </tbody>
+       </table>
+      </>
+      )
+  }
+  const r1=ReactDOM.createRoot(document.getElementById('root'))
+  r1.render(<App/>)*/
+
+  //React using userId
+
+  function App(){
+    const [user,setUser]=useState([])
+    const [id,setId]=useState(1);
+
+    useEffect(()=>{
+        fetch(`https://jsonplaceholder.typicode.com/users/${id}`)
+        .then(response=>response.json())
+        .then(data=>setUser(data))
+    })
+    return(
+         <div>
+          <h1>User</h1>
+          <h2>{user.name}</h2>
+          <h3>{user.email}</h3>
+          <h4>{user.website}</h4>
+          <button onClick={()=>setId(id+1)}>Next</button>
+         </div>
+    )
+  }
+  const r1=ReactDOM.createRoot(document.getElementById('root'))
+  r1.render(<App/>)
