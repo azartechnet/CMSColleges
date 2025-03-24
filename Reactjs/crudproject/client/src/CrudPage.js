@@ -71,6 +71,7 @@ const updateFood = (id) => {
                         <th>Food Description</th>
                         <th>Edit</th>
                         <th>Delete</th>
+                        <th>Payment</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -82,6 +83,8 @@ const updateFood = (id) => {
                         <input type="text" placeholder='UpdateFoodName' onChange={(e)=>setNewFoodName(e.target.value)}/>
                         <button onClick={()=>updateFood(val._id)}>Edit</button></td>
                     <td><button onClick={()=>deleteData(val._id)}>Delete</button></td>
+
+                    <td><button><a href="">Pay</a></button></td>
                  </tr>
                 ))}
                 </tbody>
