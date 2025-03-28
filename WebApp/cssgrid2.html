@@ -1,0 +1,38 @@
+<style>
+    .grid-container
+    {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        gap: 10px;
+        background-color: aqua;
+        padding: 10px;
+    }
+    .grid-container>div
+    {
+        background-color: blue;
+        text-align: center;
+        padding: 10px;
+        font-size: 30px;
+    }
+   /* .item1
+   {
+    grid-column-start: 1;
+    grid-column-end: 4;
+   } */
+   /* .item2
+   {
+    grid-column-start: 1;
+    grid-column-end: 3;
+   } */
+    .item3
+    {
+        grid-row-start: 1;
+        grid-row-end:3;
+    }
+</style>
+<div class="grid-container">
+  <div class="item1">1</div>
+  <div  class="item2">2</div>
+  <div class="item3">3</div>
+  <div>4</div>
+</div>
